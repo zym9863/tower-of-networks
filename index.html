@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>网络之塔：3D交互式体系结构浏览器</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div id="scene-container">
+        <!-- 加载动画 -->
+        <div class="loading-animation" id="loading-animation"></div>
+      </div>
+      <div id="info-panel">
+        <h2>网络层信息</h2>
+        <div id="layer-info">
+          <div class="welcome-info">
+            <p>欢迎使用网络之塔 3D 交互式浏览器</p>
+            <p>点击任意网络层查看详细信息</p>
+            <ul class="controls-info">
+              <li><span class="icon">🖱️</span> 左键拖动：旋转视图</li>
+              <li><span class="icon">👆</span> 右键拖动：平移视图</li>
+              <li><span class="icon">⚙️</span> 滚轮：缩放视图</li>
+            </ul>
+            <p>使用下方按钮切换网络模型或播放动画</p>
+          </div>
+        </div>
+      </div>
+      <div id="controls">
+        <div class="model-selector">
+          <button id="osi-model" class="active">OSI七层模型</button>
+          <button id="tcp-model">TCP/IP四层模型</button>
+        </div>
+        <div class="animation-controls">
+          <button id="encapsulation-btn">数据封装动画</button>
+          <button id="decapsulation-btn">数据解封装动画</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
