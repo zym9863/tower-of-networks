@@ -28,7 +28,7 @@ const loadingManager = new THREE.LoadingManager(
     }
   },
   // 加载进度
-  (url, itemsLoaded, itemsTotal) => {
+  (_url, itemsLoaded, itemsTotal) => {
     const progress = (itemsLoaded / itemsTotal) * 100;
     console.log(`加载进度: ${progress.toFixed(2)}%`);
   }
@@ -56,7 +56,7 @@ renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // 限制像素比以提高性能
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.2;
 container.appendChild(renderer.domElement);
@@ -124,10 +124,10 @@ const networkTower = new NetworkTower(scene);
 networkTower.createOSIModel(); // 默认显示OSI模型
 
 // 设置信息面板
-const infoPanel = setupInfoPanel();
+setupInfoPanel();
 
 // 设置控制按钮
-const controls_ui = setupControls(networkTower, scene);
+setupControls(networkTower);
 
 // 设置动画
 const encapsulationAnimation = setupEncapsulationAnimation(scene, networkTower);

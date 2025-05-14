@@ -1,8 +1,7 @@
 // 控制组件
 import { NetworkTower } from '../models/NetworkTower';
-import * as THREE from 'three';
 
-export function setupControls(networkTower: NetworkTower, scene: THREE.Scene) {
+export function setupControls(networkTower: NetworkTower) {
   const osiModelBtn = document.getElementById('osi-model');
   const tcpModelBtn = document.getElementById('tcp-model');
   const encapsulationBtn = document.getElementById('encapsulation-btn');
